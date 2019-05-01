@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>登录</title>
+		<link href="css/login.css" rel="stylesheet"/>		
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<script src="js/vue-2.6.10.js"></script>
+	</head>
+	<body>
+		<div class="box" id="app">
+			<h1>login</h1>
+			<form ref="loginform" action="/login">
+				<input type="text" name="username" ref="username" placeholder="Username" autocomplete="off"/>
+				<input type="password" name="password" ref="password" placeholder="Password" />				
+				<p @click="remeber" style="cursor:pointer;">
+					<i class="fa fa-square-o" :class.prevent="i_class" aria-hidden="true" style="color:white;"> remeber me</i>					
+				<p/>
+				<label v-html="input_remeber"></label>							
+				<a class="submit" href="javascript:void(0);" @click="tologin">Login</a>
+			</form>
+		</div>
+		
+		<script src="js/login.js"></script>
+		
+	</body>
+</html>
